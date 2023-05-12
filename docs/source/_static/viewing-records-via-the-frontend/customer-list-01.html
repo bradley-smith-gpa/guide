@@ -1,0 +1,24 @@
+{% extends 'basics/base/base.html' %}
+
+{% block content %}
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h1 class="mb-3">Customers</h1>
+    </div>
+  </div>
+  <div class="row">
+    {% for customer in customers %}
+    <div class="col-3 mb-4">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">{{customer.first_name}} {{customer.last_name}}</h5>
+          <a href = "mailto:{{customer.email}}">{{customer.email}}</a>
+        </div>
+      </div>
+    </div>
+    {% endfor%}
+  </div>
+  </div>
+</div>
+{% endblock content %}
